@@ -18,7 +18,7 @@ class ParticleSystem {
   }
 
   void run() {
-    // Cycle through the ArrayList backwards b/c we are deleting
+    // Using the Iterator b/c we are deleting from list while iterating
     Iterator<Particle> it = particles.iterator();
     while (it.hasNext()) {
       Particle p = it.next();
