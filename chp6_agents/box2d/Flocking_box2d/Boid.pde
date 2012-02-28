@@ -45,7 +45,7 @@ class Boid {
     ali.mulLocal(1);
     coh.mulLocal(1);
     // Add the force vectors to acceleration
-    Vec2 loc = body.getMemberWorldCenter();
+    Vec2 loc = body.getWorldCenter();
     body.applyForce(sep,loc);
     body.applyForce(ali,loc);
     body.applyForce(coh,loc);
@@ -54,7 +54,7 @@ class Boid {
   // A method that calculates and applies a steering force towards a target
   // STEER = DESIRED MINUS VELOCITY
   Vec2 seek(Vec2 target) {
-    Vec2 loc = body.getMemberWorldCenter();
+    Vec2 loc = body.getWorldCenter();
     Vec2 desired = target.sub(loc);  // A vector pointing from the location to the target
 
     // If the magnitude of desired equals 0, skip out of here
@@ -126,9 +126,9 @@ class Boid {
     Vec2 steer = new Vec2(0,0);
     int count = 0;
     // For every boid in the system, check if it's too close
-    Vec2 locA = body.getMemberWorldCenter();
+    Vec2 locA = body.getWorldCenter();
     for (Boid other : boids) {
-      Vec2 locB = other.body.getMemberWorldCenter();
+      Vec2 locB = other.body.getWorldCenter();
       float d = dist(locA.x,locA.y,locB.x,locB.y);
       // If the distance is greater than 0 and less than an arbitrary amount (0 when you are yourself)
       if ((d > 0) && (d < desiredseparation)) {
@@ -167,9 +167,9 @@ class Boid {
     float neighbordist = box2d.scalarPixelsToWorld(50);
     Vec2 steer = new Vec2(0,0);
     int count = 0;
-    Vec2 locA = body.getMemberWorldCenter();
+    Vec2 locA = body.getWorldCenter();
     for (Boid other : boids) {
-      Vec2 locB = other.body.getMemberWorldCenter();
+      Vec2 locB = other.body.getWorldCenter();
       float d = dist(locA.x,locA.y,locB.x,locB.y);
       if ((d > 0) && (d < neighbordist)) {
         Vec2 vel = other.body.getLinearVelocity();
@@ -203,9 +203,9 @@ class Boid {
     float neighbordist = box2d.scalarPixelsToWorld(50);
     Vec2 sum = new Vec2(0,0);   // Start with empty vector to accumulate all locations
     int count = 0;
-    Vec2 locA = body.getMemberWorldCenter();
+    Vec2 locA = body.getWorldCenter();
     for (Boid other : boids) {
-      Vec2 locB = other.body.getMemberWorldCenter();
+      Vec2 locB = other.body.getWorldCenter();
       
       float d = dist(locA.x,locA.y,locB.x,locB.y);
       if ((d > 0) && (d < neighbordist)) {
@@ -224,23 +224,26 @@ class Boid {
   void makeBody(Vec2 center, float w_, float h_, Vec2 vel, float avel) {
 
     // Define a polygon (this is what we use for a rectangle)
-    PolygonDef sd = new PolygonDef();
+    PolygonShape sd = new PolygonShape();
     float box2dW = box2d.scalarPixelsToWorld(w_/2);
     float box2dH = box2d.scalarPixelsToWorld(h_/2);
     sd.setAsBox(box2dW, box2dH);
 
+    // Define a fixture
+    FixtureDef fd = new FixtureDef();
+    fd.shape = sd;
     // Parameters that affect physics
-    sd.density = 1.0;
-    sd.friction = 0.3;
-    sd.restitution = 0.5;
+    fd.density = 1;
+    fd.friction = 0.3;
+    fd.restitution = 0.5;
 
     // Define the body and make it from the shape
     BodyDef bd = new BodyDef();
+    bd.type = BodyType.DYNAMIC;
     bd.position.set(box2d.coordPixelsToWorld(center));
 
     body = box2d.createBody(bd);
-    body.createShape(sd);
-    body.setMassFromShapes();
+    body.createFixture(fd);
     
     body.setLinearVelocity(vel);
     body.setAngularVelocity(avel);

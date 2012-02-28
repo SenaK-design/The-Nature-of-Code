@@ -8,7 +8,7 @@
 ArrayList<Vehicle> vehicles;
 
 void setup() {
-  size(320,240);
+  size(640,360);
   smooth();
 
   // We are now making random vehicles and storing them in an ArrayList
@@ -31,11 +31,11 @@ void draw() {
 
   // Instructions
   fill(0);
-  //text("Click the mouse to generate new vehicles.",10,height-16);
+  text("Drag the mouse to generate new vehicles.",10,height-16);
 }
 
 
-void mousePressed() {
+void mouseDragged() {
   vehicles.add(new Vehicle(mouseX,mouseY));
 }
 

@@ -44,7 +44,7 @@ class Vehicle {
   void wander() {
     float wanderR = 25;         // Radius for our "wander circle"
     float wanderD = 40;         // Distance for our "wander circle"
-    float change = 0.6;
+    float change = 0.3;
     wandertheta += random(-change,change);     // Randomly change wander theta
 
     // Now we have to calculate the new location to steer towards on the wander circle

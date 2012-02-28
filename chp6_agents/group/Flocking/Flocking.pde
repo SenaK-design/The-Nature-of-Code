@@ -11,7 +11,7 @@
 Flock flock;
 
 void setup() {
-  size(300,200);
+  size(640,360);
   flock = new Flock();
   // Add an initial set of boids into the system
   for (int i = 0; i < 100; i++) {
@@ -24,10 +24,14 @@ void setup() {
 void draw() {
   background(255);
   flock.run();
+  
+    // Instructions
+  fill(0);
+  text("Drag the mouse to generate new boids.",10,height-16);
 }
 
 // Add a new boid into the System
-void mousePressed() {
+void mouseDragged() {
   flock.addBoid(new Boid(mouseX,mouseY));
 }
 

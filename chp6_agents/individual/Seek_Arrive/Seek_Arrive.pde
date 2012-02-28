@@ -13,7 +13,7 @@ Vehicle seeker;
 Vehicle arriver;
 
 void setup() {
-  size(200,200);
+  size(640,360);
   seeker = new Vehicle(width/2,height/2);
   arriver = new Vehicle(width/2,height/2);
   smooth();

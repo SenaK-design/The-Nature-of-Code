@@ -9,7 +9,7 @@ int totalThings = 2000;
 ArrayList<Thing> a;            // ArrayList for all "things"
 
 void setup() {
-  size(400,400);
+  size(640,360);
   a = new ArrayList<Thing>();  // Create the list
 
   // Put 2000 Things in the system

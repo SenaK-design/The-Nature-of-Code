@@ -16,7 +16,7 @@ Vehicle car1;
 Vehicle car2;
 
 void setup() {
-  size(640, 320);
+  size(640, 360);
   smooth();
 
   path = new Path();

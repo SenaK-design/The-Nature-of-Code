@@ -12,11 +12,11 @@ int totalThings = 2000;
 
 ArrayList<Thing> a;            // ArrayList for all "things"
 ArrayList<Thing>[][] grid;     // Grid of ArrayLists for intersection test
-int scl = 5;           // Size of each grid cell
+int scl = 4;           // Size of each grid cell
 int cols, rows;         // Total coluns and rows
 
 void setup() {
-  size(400,400);
+  size(640,360);
   smooth();
 
   a = new ArrayList<Thing>();  // Create the list

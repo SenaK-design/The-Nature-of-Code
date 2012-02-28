@@ -12,7 +12,7 @@ Vehicle wanderer;
 boolean debug = true;
 
 void setup() {
-  size(200,200);
+  size(640,360);
   wanderer = new Vehicle(width/2,height/2);
   smooth();
 }

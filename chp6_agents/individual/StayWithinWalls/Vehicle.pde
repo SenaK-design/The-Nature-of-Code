@@ -54,7 +54,7 @@ class Vehicle {
     if (location.y < d) {
       desired = new PVector(velocity.x, maxspeed);
     } 
-    else if (location.y > width-d) {
+    else if (location.y > height-d) {
       desired = new PVector(velocity.x, -maxspeed);
     } 
 
