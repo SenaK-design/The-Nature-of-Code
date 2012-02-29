@@ -15,7 +15,7 @@ class Blanket {
     for(int y=0; y< h; y++) {
       for(int x=0; x < w; x++) {
 
-        Particle p = new Particle(new Vec2D(100+x*len,y*len));
+        Particle p = new Particle(new Vec2D(220+x*len,y*len));
         physics.addParticle(p);
         particles.add(p);
 

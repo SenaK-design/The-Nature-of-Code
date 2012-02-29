@@ -44,7 +44,7 @@ Blanket b;
 
 
 void setup() {
-  size(400,300);
+  size(640,360);
   smooth();
   physics=new VerletPhysics2D();
   physics.addBehavior(new GravityBehavior(new Vec2D(0,0.1)));

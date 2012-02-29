@@ -23,7 +23,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
- 
+
 import toxi.physics2d.*;
 import toxi.physics2d.behaviors.*;
 import toxi.geom.*;
@@ -35,34 +35,32 @@ VerletPhysics2D physics;
 Chain chain;
 
 void setup() {
-  size(400,300);
+  size(400, 300);
   smooth();
 
   // Initialize the physics world
   physics=new VerletPhysics2D();
-  physics.addBehavior(new GravityBehavior(new Vec2D(0,0.1)));
-  physics.setWorldBounds(new Rect(0,0,width,height));
+  physics.addBehavior(new GravityBehavior(new Vec2D(0, 0.1)));
+  physics.setWorldBounds(new Rect(0, 0, width, height));
 
   // Initialize the chain
-  chain = new Chain(200,20,12,0.2);
+  chain = new Chain(200, 20, 12, 0.2);
 }
 
 void draw() {
   background(255);
 
   // Update physics
-  if (mousePressed) {
-    physics.update();
-  }
+  physics.update();
   // Update chain's tail according to mouse location 
-  chain.updateTail(mouseX,mouseY);
+  chain.updateTail(mouseX, mouseY);
   // Display chain
   chain.display();
 }
 
 void mousePressed() {
   // Check to see if we're grabbing the chain
-  chain.contains(mouseX,mouseY);
+  chain.contains(mouseX, mouseY);
 }
 
 void mouseReleased() {
