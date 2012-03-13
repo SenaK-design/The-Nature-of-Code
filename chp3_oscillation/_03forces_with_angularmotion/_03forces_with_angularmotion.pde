@@ -1,11 +1,9 @@
-Mover[] movers = new Mover[10];
+Mover[] movers = new Mover[20];
 
 Attractor a;
 
-float g = 0.4;
-
 void setup() {
-  size(400,400);
+  size(640,360);
   smooth();
   background(255);
   for (int i = 0; i < movers.length; i++) {

@@ -74,7 +74,9 @@ void draw() {
   background(255);
 
   // We must always step through time!
+
   box2d.step();
+
 
   // Show the blob!
   if (skeleton) {
@@ -96,14 +98,15 @@ void draw() {
   box.display();
   // Draw the spring (it only appears when active)
   spring.display();
-  
+
   fill(0);
-  text("Space bar to toggle creature/skeleton.\nClick and drag the box.",20,height-30);
-  
+  text("Space bar to toggle creature/skeleton.\nClick and drag the box.", 20, height-30);
 }
 
 
 void keyPressed() {
-  skeleton = !skeleton;
+  if (key == ' ') {
+    skeleton = !skeleton;
+  }
 }
 

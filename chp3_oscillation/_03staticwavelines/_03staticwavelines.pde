@@ -1,5 +1,5 @@
-float theta = 0;
-float thetaVel = 0.1;
+float angle = 0;
+float angleVel = 0.1;
 
 size(640,360);
 background(255);
@@ -11,9 +11,9 @@ noFill();
 
 beginShape();
 for (int x = 0; x <= width; x += 5) {
-  float y = map(sin(theta),-1,1,0,height);
+  float y = map(sin(angle),-1,1,0,height);
   vertex(x,y);
-  theta +=thetaVel;
+  angle +=angleVel;
 } 
 endShape();
 

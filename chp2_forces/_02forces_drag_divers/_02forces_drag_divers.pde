@@ -3,7 +3,7 @@ Mover[] movers = new Mover[5];
 Liquid liquid;
 
 void setup() {
-  size(640, 360);
+  size(360, 640);
   smooth();
   reset();
   liquid = new Liquid(0, height/2, width, height/2, 0.1);
@@ -32,6 +32,7 @@ void draw() {
   
   fill(0);
   text("click mouse to reset",10,30);
+  
 }
 
 void mousePressed() {
@@ -40,7 +41,7 @@ void mousePressed() {
 
 void reset() {
   for (int i = 0; i < movers.length; i++) {
-    movers[i] = new Mover(random(1, 5), 100+ i*100, 0);
+    movers[i] = new Mover(random(1, 5), 30+i*70, 0);
   }
 }
 

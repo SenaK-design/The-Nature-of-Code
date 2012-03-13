@@ -32,9 +32,11 @@ class Mover {
   void checkEdges() {
 
     if (location.x > width) {
-      location.x = 0;
-    } else if (location.x < 0) {
       location.x = width;
+      velocity.x *= -1;
+    } else if (location.x < 0) {
+      velocity.x *= -1;
+      location.x = 0;
     }
 
     if (location.y > height) {

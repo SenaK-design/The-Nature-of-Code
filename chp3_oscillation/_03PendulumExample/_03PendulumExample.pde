@@ -7,11 +7,11 @@
 
 // Gravity Force = Mass * Gravitational Constant;
 // Pendulum Force = Gravity Force * sine(theta)
-// Angular Acceleration = Pendulum Force / Mass = Gravitational Constant * sine(theta);
+// Angular Acceleration = Pendulum Force / Mass = gravitational acceleration * sine(theta);
 
 // Note this is an ideal world scenario with no tension in the 
 // pendulum arm, a more realistic formula might be:
-// Angular Acceleration = (G / R) * sine(theta)
+// Angular Acceleration = (g / R) * sine(theta)
 
 // For a more substantial explanation, visit:
 // http://www.myphysicslab.com/pendulum1.html 

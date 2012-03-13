@@ -1,6 +1,6 @@
 
-float startTheta = 0;
-float thetaVel = 0.04;
+float startAngle = 0;
+float angleVel = 0.07;
 
 void setup() {
   size(640,360);
@@ -10,15 +10,15 @@ void setup() {
 void draw() {
   background(255);
 
-  startTheta += 0.02;
-  float theta = startTheta;
+  startAngle += 0.015;
+  float angle = startAngle;
 
- for (int x = 0; x <= width; x += 5) {
-    float y = map(sin(theta),-1,1,0,height);
+ for (int x = 0; x <= width; x += 10) {
+    float y = map(sin(angle),-1,1,0,height);
     stroke(0);
     fill(0,50);
     ellipse(x,y,10,10);
-    theta += thetaVel;
+    angle += angleVel;
   } 
 
 }

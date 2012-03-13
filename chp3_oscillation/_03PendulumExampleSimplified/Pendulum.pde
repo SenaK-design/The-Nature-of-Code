@@ -34,8 +34,8 @@ class Pendulum  {
 
   // Function to update location
   void update() {
-    float G = 0.4;                              // Arbitrary universal gravitational constant
-    aAcceleration = (-1 * G / r) * sin(angle);  // Calculate acceleration (see: http://www.myphysicslab.com/pendulum1.html)
+    float gravity = 0.4;                              // Arbitrary constant
+    aAcceleration = (-1 * gravity / r) * sin(angle);  // Calculate acceleration (see: http://www.myphysicslab.com/pendulum1.html)
     aVelocity += aAcceleration;                 // Increment velocity
     aVelocity *= damping;                       // Arbitrary damping
     angle += aVelocity;                         // Increment angle
