@@ -21,8 +21,8 @@ class ParticleSystem {
 
   void applyRepeller(Repeller r) {
     for (Particle p: particles) {
-      PVector repel = r.repel(p);        
-      p.applyForce(repel);
+      PVector force = r.repel(p);        
+      p.applyForce(force);
     }
   }
 

@@ -13,7 +13,8 @@ class Particle {
   Particle(PVector l) {
     // Boring example with constant acceleration
     acc = new PVector(0,0.05,0);
-    vel = new PVector(random(-1,1),random(-2,0),0);
+    vel = new PVector(random(-1,1),random(-1,0),0);
+    vel.mult(2);
     loc = l.get();
     lifespan = 255;
   }

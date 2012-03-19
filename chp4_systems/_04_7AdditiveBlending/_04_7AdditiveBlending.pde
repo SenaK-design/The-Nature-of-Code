@@ -38,7 +38,9 @@ void draw() {
   background(0);
 
   ps.run();
+  for (int i = 0; i < 10; i++) {
   ps.addParticle();
+  }
 
   pgl.endGL();
 }
