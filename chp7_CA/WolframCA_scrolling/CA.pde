@@ -72,7 +72,7 @@ class CA {
   }
 
   // Implementing the Wolfram rules
-  // Could be improved and made more concise, but here we can explicitly see what is going on for each case
+  // This is the concise conversion to binary way
   int rules (int a, int b, int c) {
     String s = "" + a + b + c;
     int index = Integer.parseInt(s, 2);

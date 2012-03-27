@@ -51,9 +51,15 @@ class CA {
   // Implementing the Wolfram rules
   // Could be improved and made more concise, but here we can explicitly see what is going on for each case
   int rules (int a, int b, int c) {
-    String s = "" + a + b + c;
-    int index = Integer.parseInt(s, 2);
-    return ruleset[index];
+    if (a == 1 && b == 1 && c == 1) return rules[0];
+    if (a == 1 && b == 1 && c == 0) return rules[1];
+    if (a == 1 && b == 0 && c == 1) return rules[2];
+    if (a == 1 && b == 0 && c == 0) return rules[3];
+    if (a == 0 && b == 1 && c == 1) return rules[4];
+    if (a == 0 && b == 1 && c == 0) return rules[5];
+    if (a == 0 && b == 0 && c == 1) return rules[6];
+    if (a == 0 && b == 0 && c == 0) return rules[7];
+    return 0;
   }
 }
 
