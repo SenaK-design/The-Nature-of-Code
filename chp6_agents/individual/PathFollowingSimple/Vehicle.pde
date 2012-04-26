@@ -72,12 +72,10 @@ class Vehicle {
 
       // Draw normal location
       fill(0);
-      noStroke();
-      line(predictLoc.x, predictLoc.y, target.x, target.y);
-      ellipse(target.x, target.y, 4, 4);
       stroke(0);
-      // Draw actual target (red if steering towards it)
-      line(predictLoc.x, predictLoc.y, target.x, target.y);
+      line(predictLoc.x, predictLoc.y, normalPoint.x, normalPoint.y);
+      ellipse(normalPoint.x, normalPoint.y, 4, 4);
+      stroke(0);
       if (distance > p.radius) fill(255, 0, 0);
       noStroke();
       ellipse(target.x+dir.x, target.y+dir.y, 8, 8);

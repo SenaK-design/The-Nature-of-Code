@@ -51,14 +51,14 @@ class CA {
   // Implementing the Wolfram rules
   // Could be improved and made more concise, but here we can explicitly see what is going on for each case
   int rules (int a, int b, int c) {
-    if (a == 1 && b == 1 && c == 1) return rules[0];
-    if (a == 1 && b == 1 && c == 0) return rules[1];
-    if (a == 1 && b == 0 && c == 1) return rules[2];
-    if (a == 1 && b == 0 && c == 0) return rules[3];
-    if (a == 0 && b == 1 && c == 1) return rules[4];
-    if (a == 0 && b == 1 && c == 0) return rules[5];
-    if (a == 0 && b == 0 && c == 1) return rules[6];
-    if (a == 0 && b == 0 && c == 0) return rules[7];
+    if (a == 1 && b == 1 && c == 1) return ruleset[0];
+    if (a == 1 && b == 1 && c == 0) return ruleset[1];
+    if (a == 1 && b == 0 && c == 1) return ruleset[2];
+    if (a == 1 && b == 0 && c == 0) return ruleset[3];
+    if (a == 0 && b == 1 && c == 1) return ruleset[4];
+    if (a == 0 && b == 1 && c == 0) return ruleset[5];
+    if (a == 0 && b == 0 && c == 1) return ruleset[6];
+    if (a == 0 && b == 0 && c == 0) return ruleset[7];
     return 0;
   }
 }

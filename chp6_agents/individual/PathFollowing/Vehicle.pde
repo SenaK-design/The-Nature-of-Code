@@ -104,7 +104,7 @@ class Vehicle {
       fill(0);
       ellipse(normal.x, normal.y, 4, 4);
       // Draw actual target (red if steering towards it)
-      line(predictLoc.x, predictLoc.y, target.x, target.y);
+      line(predictLoc.x, predictLoc.y, normal.x, normal.y);
       if (worldRecord > p.radius) fill(255, 0, 0);
       noStroke();
       ellipse(target.x, target.y, 8, 8);

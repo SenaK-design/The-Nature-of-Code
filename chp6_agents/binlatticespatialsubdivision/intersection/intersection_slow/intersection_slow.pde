@@ -28,6 +28,7 @@ void draw() {
   // Run through the Grid
   stroke(255);
   for (Thing t : a) {
+    t.highlight = false;
     for (Thing other : a) {
       // As long as its not the same one
       if (t != other) {
