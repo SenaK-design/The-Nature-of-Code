@@ -18,20 +18,20 @@ class Walker {
   }
 
   // Randomly move up, down, left, right, or stay in one place
-  void step() {
+ void step() {
     
-    int choice = int(random(4));
-    
-    if (choice == 0) {
+    float r = random(1);
+    // A 40% of moving to the right!
+    if (r < 0.4) {    
       x++;
-    } else if (choice == 1) {
+    } else if (r < 0.6) {
       x--;
-    } else if (choice == 2) {
+    } else if (r < 0.8) {
       y++;
     } else {
       y--;
     }
-
+  
     x = constrain(x,0,width-1);
     y = constrain(y,0,height-1);
   }

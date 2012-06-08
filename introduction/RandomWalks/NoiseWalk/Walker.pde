@@ -41,7 +41,6 @@ class Walker {
     
     noff.add(0.01,0.01,0);
     
-
     history.add(location.get());
     if (history.size() > 1000) {
       history.remove(0);

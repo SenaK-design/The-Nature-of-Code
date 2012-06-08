@@ -4,15 +4,12 @@
 
 // Landscape with height values according to Perlin noise
 
-import processing.opengl.*;
-
 Landscape land;    
 float theta = 0.0;
 
-
 void setup() {
 
-  size(640,360,OPENGL);
+  size(640,360,P3D);
 
   // Create a landscape object
   land = new Landscape(20,800,400);

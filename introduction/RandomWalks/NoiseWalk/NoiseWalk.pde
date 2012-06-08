@@ -5,7 +5,7 @@
 Walker w;
 
 void setup() {
-  size(400,400);
+  size(640,360);
   smooth();
   frameRate(30);
 

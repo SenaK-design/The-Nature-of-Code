@@ -17,7 +17,7 @@ void drawCircle(float x, float y, float r) {
   stroke(0);
   noFill();
   ellipse(x, y, r, r);
-  if(radius > 2) {
+  if(r > 2) {
     // Now we draw two more circles, one to the left
     // and one to the right
     drawCircle(x + r/2, y, r/2);
