@@ -1,3 +1,5 @@
+openFrameworks transciption in progress
+
 # The Nature of Code
 
 ![Screenshot](http://www.shiffman.net/images/noc/1.jpg)  ![Screenshot](http://www.shiffman.net/images/noc/2.jpg)  ![Screenshot](http://www.shiffman.net/images/noc/3.jpg)  ![Screenshot](http://www.shiffman.net/images/noc/4.jpg)  ![Screenshot](http://www.shiffman.net/images/noc/5.jpg) ![Screenshot](http://www.shiffman.net/images/noc/6.jpg)  ![Screenshot](http://www.shiffman.net/images/noc/7.jpg)  ![Screenshot](http://www.shiffman.net/images/noc/8.jpg)
