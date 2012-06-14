@@ -4,6 +4,8 @@
 //
 // C++ / openFrameworks version by
 // Soixante circuits / Emmanuel Geoffray 
+// TODO: add accumulative drawing
+// TODO: draw stroke on circle
 
 #include "testApp.h"
 
@@ -14,7 +16,7 @@ ofVec2f velocity;
 //--------------------------------------------------------------
 void testApp::setup(){
   ofSetWindowShape(200,200);
-  //ofEnableSmooth();
+  ofEnableSmoothing();
   ofEnableAlphaBlending();
   ofBackground(255);
   location.set(100,100);
