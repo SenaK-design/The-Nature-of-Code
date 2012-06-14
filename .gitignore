@@ -8,3 +8,8 @@ chp4_systems/flight404/.DS_Store
 chp5_physicslibraries/.DS_Store
 chp5_physicslibraries/box2d/.DS_Store
 *.swp
+*.cbp
+*.workspace
+*~
+obj/
+bin/
