@@ -2,7 +2,7 @@
 // Daniel Shiffman
 // Draft book
 
-// Example 1-3: Normalizing a Vector
+// Example 1-6: Normalizing a Vector
 
 void setup() {
   size(200,200);
