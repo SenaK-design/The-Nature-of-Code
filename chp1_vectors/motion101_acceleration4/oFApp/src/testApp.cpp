@@ -8,7 +8,7 @@
 #include "testApp.h"
 #include "mover.h"
 
-// Example 2-c: Motion 101 acceleration perlin
+// Example 2-d: Motion 101 acceleration towards mouse
 
 mover myMover;
 
