@@ -6,20 +6,21 @@ class mover {
 
 	public:
 		void setup(){
-      location.set(ofRandomWidth(), ofRandomHeight());
+      location.set(30, 30);
       velocity.set(0, 0);
       acceleration.set(0, 0);
-      topSpeed = 6;
+      mass = 1;
     }
 
-		void applyForce(const ofVec2f & f){
-      acceleration = f;
+		void applyForce(const ofVec2f & force){
+      ofVec2f f(force/mass);
+      acceleration += f;
     }
 
 		void update(){
       velocity += acceleration;
-      velocity.limit(topSpeed);
       location += velocity;
+      acceleration = 0;
     }
 
 		void draw(){
@@ -51,5 +52,5 @@ class mover {
     ofVec2f location;
     ofVec2f velocity;
     ofVec2f acceleration;
-    float topSpeed;
+    float mass;
 };
