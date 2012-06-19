@@ -21,9 +21,6 @@ void testApp::setup(){
   ofBackground(255);
 
   movers.resize(5);
-  for (unsigned int i = 0; i < movers.size(); i++){
-    movers[i].setup();
-  }
   reset();
 
   myliquid.setup();
@@ -37,6 +34,7 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::reset(){
   for (unsigned int i = 0; i < movers.size(); i++){
+    movers[i].setup();
     movers[i].setMass(ofRandom(1, 5));
     movers[i].setLocation(30 + (i * 70), 0);
   }
