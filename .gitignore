@@ -8,6 +8,7 @@ noc_pdf/index.pdf
 book.asc.xml
 
 *.swp
+*.swo
 *.cbp
 *.workspace
 *~
