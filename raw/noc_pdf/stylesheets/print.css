@@ -3,12 +3,27 @@ _____________________________________________________________________________ */
 
 @page {
 	size: 7.5in 9.25in;
-	margin: 0.75in;
+	margin-top: 0.75in;
+	margin-bottom: 0.75in;
+}
+
+@page :left {
+	margin-right: 0.875in;
+	margin-left: 0.625in;
+	//margin-right:0.75in;
+	//margin-left:0.75in;
+}
+
+@page :right {
+	margin-right: 0.625in;
+	margin-left: 0.875in;
+	//margin-right:0.75in;
+	//margin-left:0.75in;
 }
 
 body {
   font-size: 13px;
-	font-family: "Proxima-Nova-Regular";
+	font-family: "ProximaNova-Regular";
 	margin: 0;
 	padding: 0;
 }
@@ -20,14 +35,11 @@ img, .note, .example, .tip, .breakout_box, .half-width, .half-width-right, table
 	page-break-inside: avoid;
 }
 
-span.example {
-	page-break-after: avoid;
-}
-
 /* Fonts
 _____________________________________________________________________________ */
 
-@font-face {
+/* Moved all of this to fonts.css */
+/*@font-face {
 	font-family: 'Proxima-Nova-Regular';
 	src: url('../fonts/ProximaNova-Regular.eot');
 	src: local('☺'), url('../fonts/ProximaNova-Regular.ttf') format('truetype'), url('../fonts/ProximaNova-Regular.svg') format('svg');
@@ -41,22 +53,43 @@ _____________________________________________________________________________ */
 	src: local('☺'), url('../fonts/ProximaNova-Semibold.ttf') format('truetype'), url('../fonts/ProximaNova-Semibold.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
+}*/
 
-@font-face {
+/*@font-face {
 	font-family: 'Vijaya';
 	src: url('../fonts/Vijaya.eot');
 	src: local('☺'), url('../fonts/Vijaya.woff') format('woff'), url('../fonts/Vijaya.ttf') format('truetype'), url('../fonts/Vijaya.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}*/
+
+/* Font Styles
+_____________________________________________________________________________ */
+
+em {
+  font-style: normal;
+  font-family: "ProximaNova-RegularIt";
 }
+
+strong {
+  font-style: normal;
+  font-family: "ProximaNova-Bold";
+}
+
+em strong,
+strong em {
+  font-style: normal;
+  font-family: "ProximaNova-BoldIt";
+}
+
+
 
 /* Define Left Headers and Footers
 _____________________________________________________________________________ */
 
 @page :left {
   @top-left {
-    font: 8pt "Proxima-Nova-Regular", serif;
+    font: 8pt "ProximaNova-Regular", serif;
     content: "The Nature of Code";
     vertical-align: bottom;
     padding-bottom: 2em;
@@ -64,7 +97,7 @@ _____________________________________________________________________________ */
   }
 
   @bottom-left {
-    font: 9pt "Proxima-Nova-Regular", serif;
+    font: 9pt "ProximaNova-Regular", serif;
     content: counter(page);
     padding-top: 2em;
     vertical-align: top;
@@ -77,7 +110,7 @@ _____________________________________________________________________________ */
 
 @page :right {
   @top-right {
-    font: 8pt "Proxima-Nova-Regular", serif;
+    font: 8pt "ProximaNova-Regular", serif;
     content: string(doctitle);
     vertical-align: bottom;
     padding-bottom: 2em;
@@ -85,7 +118,7 @@ _____________________________________________________________________________ */
   }
 
   @bottom-right {
-    font: 9pt "Proxima-Nova-Regular", serif;
+    font: 9pt "ProximaNova-Regular", serif;
     content: counter(page);
     text-align: right;
     vertical-align: top;
@@ -100,23 +133,28 @@ h2 { string-set: doctitle content() }
 _____________________________________________________________________________ */
 
 a[href]::after {
-	content: " (See page " target-counter(attr(href), page) ")";
+	content: " (see page " target-counter(attr(href), page) ")";
 }
 
 a[href^="http:"]::after {
-	content: " (See " attr(href) ")";
+	content: " ("attr(href)")";
+}
+
+a {
+	text-decoration: none;
+	color: #404040;
 }
 
 /* Font sizes and placements
 _____________________________________________________________________________ */
 
 h1 {
-	font-family: "Proxima-Nova-Regular"
+	font-family: "ProximaNova-Regular"
 	font-size: 320%;
 }
 
 h2 {
-	font-family: "Proxima-Nova-Regular"
+	font-family: "ProximaNova-Regular";
 	page-break-before:always;
 	font-size: 38pt;
 	margin-top: 3.5em;
@@ -125,7 +163,7 @@ h2 {
 }
 
 h3 {
-	font-family: "Proxima-Nova-Semibold";
+	font-family: "ProximaNova-Semibold";
 	page-break-after: avoid;
 	color: #404040;
 	font-size: 17pt;
@@ -133,7 +171,7 @@ h3 {
 }
 
 h4 {
-	font-family: "Proxima-Nova-Semibold";
+	font-family: "ProximaNova-Semibold";
 	page-break-after: avoid;
 	font-size: 12pt;
 	color: #191919;
@@ -151,7 +189,7 @@ h3, h4, h5, h6 {
 p {
 	font-size: 9pt;
 	color: #404040;
-	line-height: 1.618em;
+	line-height: 12pt;
 	letter-spacing:0.03em;
 }
 
@@ -160,7 +198,7 @@ _____________________________________________________________________________ */
 
 table {
 	font-size: 8pt;
-	font-family: "Proxima-Nova-Regular";
+	font-family: "ProximaNova-Regular";
 	color: #606060;
 	border-collapse: collapse;
 	width: 100%;
@@ -179,7 +217,9 @@ table th {
 	color: #404040;
 	font-size: 9pt;
 	border: 1px solid #D1D1D1;
-	font-weight: bold;
+	background-color: rgb(92%,92%,92%);
+	font-family: "ProximaNova-Bold";
+	font-style: normal;
 }
 
 table td {
@@ -190,9 +230,12 @@ table td p {
 	margin: 0;
 }
 
-.table.mono td {
-	font-size: 10px;
-	font-family: 'Courier', sans-serif;
+table.code pre {
+  font-size: 0.9em;
+}
+
+table.code td {
+	text-align: left;
 }
 
 /* Styles
@@ -217,10 +260,17 @@ section {
 _____________________________________________________________________________ */
 
 blockquote {
-	font-family: "Vijaya";
+	font-family: "Georgia";
+	font-style: italic;
 	margin: 0 0 3em 0;
 	font-size: 16pt;
 	color: #808080;
+}
+
+blockquote span.attribution {
+	display: block;
+	font-style: normal;
+	font-size: 0.6em;
 }
 
 /* TOC
@@ -243,7 +293,7 @@ _____________________________________________________________________________ */
 
 .toc ul li a {
 	color: #333;
-	font-family: "Proxima-Nova-Semibold";
+	font-family: "ProximaNova-Semibold";
 	font-size: 18pt;
 	text-decoration: none;
 }
@@ -261,7 +311,7 @@ _____________________________________________________________________________ */
 
 .toc ul li ul li a {
 	color: #191919;
-	font-family: "Proxima-Nova-Regular";
+	font-family: "ProximaNova-Regular";
 	font-size: 10pt;
 	text-decoration: none;
 }
@@ -300,23 +350,42 @@ _____________________________________________________________________________ */
 	font-size: 12pt;
 	color: #191919;
 	margin-bottom: 0.3em;
-	font-family: "Proxima-Nova-Semibold";
+	font-style: normal;
+	font-family: "ProximaNova-Semibold";
 }
 
 /* == BREAKOUT BOXES */
 .note {
 	font-size: 10pt;
 	color: #191919;
-	padding: 0.7em 1.5em;
+	padding: 1.4em 1.5em;
 	margin: 1.15em 0;
 	background-color: #E9E9E9;
 }
 
 /* == EXERCISES */
-.example {
-	padding: 0.7em 1.5em;
-	margin: 1.15em 0;
-	background-color: #E9E9E9;
+div.example {
+	background-color: rgb(112, 115, 115);
+  color: #ffffff;
+  padding: 3em 1.5em 1em;
+	position: relative;
+  margin: 1.15em 0;
+	overflow-y:auto;
+}
+
+div.example h3[id],
+div.example h4[id],
+div.example h5[id],
+div.example h6[id] {
+  text-align: right;
+  margin: 1em 0.9em;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+div.example * {
+  color: #ffffff;
 }
 
 /* == PROJECTS */
@@ -339,11 +408,17 @@ _____________________________________________________________________________ */
 
 /* Style functions */
 .function, .klass, .var, .mono, .formula{
-	font-family: "Courier New", monospace;
-	font-weight: bold;
+    font-family: Menlo, Monaco, Consolas, "Lucida Console", monospace;
+    font-size: 1em;
 	color: #00000;
 }
+.mono, .formula{
+    font-weight: bold;
+}
 
+.formula{
+    margin-left: 2em;
+}
 /* Style note to self */
 .notetoself {
 	color: #FF0000;
@@ -352,9 +427,12 @@ _____________________________________________________________________________ */
 
 /* Style example heading */
 span.example {
- clear: both;
- display: block;
- font-size:1em;
+  background-color: #CACCCB;
+  clear: both;
+  display: block;
+  font-family: "ProximaNova-Bold";
+  font-size:1em;
+  padding: 0.7em 1em;
 }
 
 /* Image Full Width
@@ -383,8 +461,9 @@ img {
 }
 
 .caption {
-	font-family: 'Vijaya';
-	font-size: 9pt;
+	font-family: 'Georgia';
+	font-style: italic;
+	font-size: 8pt;
 	color: #606060;
 	border: 0;
   margin: 0;
@@ -503,7 +582,7 @@ dd {
 }
 
 dd p {
-	font-size: 1.2em;
+	font-size: 9pt;
 	line-height: 1em;
 	margin: 0;
 	padding: 0;
@@ -522,23 +601,12 @@ pre {
 }
 
 .source-code {
-  //border-left: 0.4em solid #272727;
-  margin-bottom: 2em;
-  padding: 0.7em 1.5em;
-  background-color: #f9f9f9;
+  //border: 0.4em solid #272727;
+  //margin-bottom: 2em;
+  //padding: 0.7em 1.5em;
+  //background-color: #f9f9f9;
   position: relative;
   clear: both;
-}
-
-.source-code a.toggle {
-  font-family: 'Helvetica', Arial, sans-serif;
-  position: absolute;
-  right: 0.8em;
-  bottom: -1.8em;
-  margin: 0;
-  font-size: 0.8em;
-  color: #656565;
-  z-index:1;
 }
 
 .note .source-code,

@@ -4,6 +4,13 @@ pre, tt, code {
   margin: 0; padding: 0;
 }
 
+pre em,
+pre strong,
+pre em strong,
+pre strong em {
+    font-family: Menlo, Monaco, Consolas, "Lucida Console", monospace;
+}
+
 body code pre span[class] {
 	color: #000000;
 }   /* Set all span elements to black in code elements.*/
@@ -25,6 +32,10 @@ body code pre span[class] {
   position: relative;
 }
 
+.offset-up .code-comment {
+  margin-bottom: 0;
+}
+
 /* Wrapper for every pairing of code and comment.
 Used to catch the .code-comment-line inside of
 a relatively positioned parent. */
@@ -42,4 +53,24 @@ a relatively positioned parent. */
   overflow-y: auto;
   clear: both;
   position: relative;
+}
+
+.stretch {
+  background-color: #eee;
+  padding: 4px;
+}
+
+/* == CODE IN EXERCISES */
+div.example code pre span[class] {
+  color: #ffffff;
+}
+
+div.example .one-line:first-child,
+div.example .code-comment,
+div.example .stretch {
+  background-color: rgb(136,138,138);
+}
+
+div.example .no-comment .one-line:first-child {
+  background: transparent;
 }
